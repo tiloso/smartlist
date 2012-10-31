@@ -1,0 +1,43 @@
+
+doctype html
+html
+  head
+    meta( charset='utf-8' )
+    title smartli.st
+    link( rel='stylesheet', href='/css/style.css' )
+
+    script( type='text/javascript' )
+      var cb = function ( e ) {
+        APP.unsortedTasks.reset( !{ tasks })
+      }
+      document.addEventListener('build', cb, false);
+
+
+    script( data-main='/js/init.js'
+          , src='/js/lib/require-2.0.2.js' )
+    //- script( data-main='/js/init-built.js'
+          , src='/js/lib/require-2.0.2.js' )
+
+
+    meta( name='viewport',
+          content='width=device-width, initial-scale=1')
+    meta( name='apple-mobile-web-app-capable', content='yes')
+    meta( name='apple-mobile-web-app-status-bar-style',
+          content='black-translucent')
+    link( rel='shortcut icon', href='/img/favicon.ico', type='image/x-icon')
+    link( rel='icon', href='/img/icon32.png', sizes='32x32')
+    link( rel='apple-touch-icon', href='/img/icon32.png', sizes='32x32')
+
+
+  body
+    header
+      a#howto( data-state='inactive' ) how it works
+      a( href='/logout') logout
+
+    div#app
+      article#tasks
+        div#logo
+        div#msg
+        input#task( type='text', maxlength='140' )
+        section#days
+

@@ -1,0 +1,15 @@
+
+h2 Please enter your password
+
+- if ( msg && msg.length )
+  ul#msg
+    li.error= msg
+
+
+form( action='/destroy', method='post' )
+  div
+    label Password:
+    input( type='password', name='password' )
+  div
+    input( type='submit', value='Delete my account' )
+

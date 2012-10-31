@@ -1,0 +1,325 @@
+html,
+body {
+  font-family: Helvetica Neue, Arial, Sans-Serif;
+  font-size: 16px;
+  background: #f8f8f9;
+}
+a {
+  color: #559dad;
+  text-decoration: none;
+}
+header {
+  font-size: 12px;
+  text-align: right;
+  margin: 15px 10px;
+}
+footer {
+  text-align: center;
+  font-size: 11px;
+  padding-bottom: 12px;
+  padding-top: 300px;
+}
+footer a {
+  margin: 0 20px;
+  color: #59595b;
+}
+#msg {
+  background: #ff0;
+}
+article#start {
+  margin: 0 auto;
+  width: 240px;
+  padding-bottom: 20px;
+  padding-top: 100px;
+}
+article#start img {
+  margin: 10px 26px;
+}
+article#start form {
+  margin-top: 20px;
+}
+article#start input[ type='text'],
+article#start [ type='password'],
+article#start [ type='submit'] {
+  padding: 5px;
+  border-width: 1px;
+  font-size: 13px;
+  -webkit-box-shadow: #a6a8aa 1px 1px 0;
+  -moz-box-shadow: #a6a8aa 1px 1px 0;
+  box-shadow: #a6a8aa 1px 1px 0;
+  display: block;
+}
+article#start input[ type='text'],
+article#start [ type='password'] {
+  color: #59595b;
+  width: 228px;
+  height: 30px;
+}
+article#start input[ type='text'] {
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+}
+article#start input[ type='password'] {
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+}
+article#start input[ type='submit'] {
+  height: 40px;
+  width: 240px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin: 15px 0;
+  font-weight: 600;
+  border-top: 1px solid #96d1f8;
+  background: #559dad;
+  background: -webkit-linear-gradient(top, #86c7d4, #559dad);
+  background: -moz-linear-gradient(top, #86c7d4, #559dad);
+  background: -ms-linear-gradient(top, #86c7d4, #559dad);
+  background: -o-linear-gradient(top, #86c7d4, #559dad);
+  color: #fcfcfc;
+}
+article#start input[ type='submit']:hover {
+  border-top-color: #6ab1bf;
+  background: #6ab1bf;
+  color: #f5f5f5;
+}
+article#start input[ type='submit']:active {
+  border-top-color: #54929e;
+  background: #54929e;
+}
+article#start p.start {
+  color: #59595b;
+  font-size: 11px;
+  width: 100%;
+  text-align: center;
+}
+#howto {
+  border: 1px solid #e7e7e7;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #e7e7e7;
+  background: -webkit-linear-gradient(top, #f8f8f9, #e7e7e7);
+  background: -moz-linear-gradient(top, #f8f8f9, #e7e7e7);
+  background: -ms-linear-gradient(top, #f8f8f9, #e7e7e7);
+  background: -o-linear-gradient(top, #f8f8f9, #e7e7e7);
+  padding: 7.5px 15px;
+  color: #383838;
+  margin: 0 20px;
+  cursor: pointer;
+}
+#howto:hover {
+  border-color: #d6eefc;
+  background: #d6eefc;
+  color: #21464d;
+}
+#howto:active,
+#howto[ data-state='active' ] {
+  border-color: #86c7d4;
+  background: #86c7d4;
+  color: #fff;
+}
+div#app {
+  max-width: 980px;
+  margin: 0 auto;
+}
+article#tasks {
+  min-width: 200px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+article#tasks div#logo {
+  margin: 10px auto;
+  width: 188px;
+  height: 26px;
+  background-image: url("/img/smartlist.png");
+}
+article#tasks input {
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 1px solid #d5d6d8;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  padding: 6px;
+  margin: 10px 0;
+  font-size: 24px;
+  color: #59595b;
+}
+article#tasks input:focus {
+  border: 1px solid #86c7d4;
+}
+.day {
+  margin: 5px 0;
+}
+.day .label {
+  font-size: 20px;
+  color: #59595b;
+  text-align: center;
+  padding-top: 10px;
+}
+.day .label #droppable {
+  height: 2px;
+}
+.day .label.active #droppable {
+  background-color: #86c7d4;
+}
+.day:first-of-type .label {
+  color: #559dad;
+  font-weight: 500;
+}
+.ui-draggable-dragging {
+  z-index: 2;
+  opacity: 0.85;
+}
+.tasks {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #272425;
+  text-align: left;
+  font-weight: normal;
+}
+.tasks .task.active .droppable {
+  background-color: #86c7d4;
+}
+.tasks .task .droppable {
+  height: 2px;
+}
+.tasks .task .display {
+  padding: 5px 0;
+  margin: 3px 0;
+  background-color: #fff;
+  height: 18px;
+  font-weight: 400;
+}
+.tasks .task .display label {
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  padding: 0 28px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tasks .task .display .destroy,
+.tasks .task .display .checkbox {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+}
+.tasks .task .display .destroy .img,
+.tasks .task .display .checkbox .img {
+  padding: 0;
+  margin: 0;
+}
+.tasks .task .display .checkbox {
+  left: 0;
+  padding: 6px 6px;
+  width: 16px;
+  height: 16px;
+}
+.tasks .task .display .checkbox .img {
+  width: 16px;
+  height: 16px;
+  background-image: url("/img/checkbox.png");
+}
+.tasks .task .display .checkbox:active .img {
+  background-position: 0 -16px;
+}
+.tasks .task .display .destroy {
+  right: 0;
+  padding: 8px 8px;
+  width: 12px;
+  height: 12px;
+}
+.tasks .task .display .destroy .img {
+  width: 12px;
+  height: 12px;
+  background-image: url("/img/destroy.png");
+}
+.tasks .task .display .destroy:active .img {
+  background-position: 0 -12px;
+}
+.tasks .task .edit {
+  display: none;
+}
+.tasks .task[ data-view='editing' ] {
+  margin-top: -1px;
+  padding: 0;
+}
+.tasks .task[ data-view='editing' ] .edit {
+  display: block;
+  width: 100%;
+}
+.tasks .task[ data-view='editing' ] .display {
+  display: none;
+}
+.howto {
+  position: relative;
+}
+.howto .ht {
+  position: absolute;
+  z-index: 2;
+}
+#ht_hashtag .ht {
+  background-image: url("/img/ht_hashtag.png");
+  height: 92px;
+  width: 120px;
+  top: -15px;
+  left: -140px;
+}
+#ht_add {
+  float: right;
+}
+#ht_add .ht {
+  background-image: url("/img/ht_add.png");
+  height: 73px;
+  width: 147px;
+  top: -45px;
+  left: -15px;
+}
+#ht_dragdrop .ht {
+  background-image: url("/img/ht_dragdrop.png");
+  height: 189px;
+  width: 97px;
+  top: 15px;
+  left: -85px;
+}
+#ht_edit {
+  float: right;
+}
+#ht_edit .ht {
+  background-image: url("/img/ht_edit.png");
+  height: 76px;
+  width: 254px;
+  top: -57px;
+  left: -95px;
+}
+#ht_destroy {
+  float: right;
+}
+#ht_destroy .ht {
+  background-image: url("/img/ht_destroy.png");
+  height: 107px;
+  width: 126px;
+  top: 15px;
+  left: -8px;
+}
+#ht_checkbox .ht {
+  background-image: url("/img/ht_checkbox.png");
+  height: 43px;
+  width: 189px;
+  left: -185px;
+  top: -8px;
+}

@@ -1,0 +1,387 @@
+
+// TRANSPARENT MIXINS
+border-radius()
+  -webkit-border-radius arguments
+  -moz-border-radius arguments
+  border-radius arguments
+
+
+box-shadow()
+  -webkit-box-shadow arguments
+  -moz-box-shadow arguments
+  box-shadow arguments
+
+
+linear-gradient()
+   background -webkit-linear-gradient( arguments )
+   background -moz-linear-gradient( arguments )
+   background -ms-linear-gradient( arguments )
+   background -o-linear-gradient( arguments )
+   // background linear-gradient( arguments )
+
+
+ellipsis()
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
+box-sizing()
+  box-sizing arguments
+  -moz-box-sizing arguments
+  -ms-box-sizing arguments
+  -webkit-box-sizing arguments
+
+
+// COLORS
+cBackground = #f8f8f9
+cSmartlist = #86c7d4
+cSmartlistDark = #559dad
+cBorder = #d5d6d8
+cGrey = #59595b
+// cDarkGrey = #ededed
+cDarkGrey = #e7e7e7
+
+
+
+// MAIN
+html, body
+  font-family Helvetica Neue, Arial, Sans-Serif
+  font-size 16px
+  background cBackground
+
+
+a
+  color cSmartlistDark
+  text-decoration none
+
+
+header
+  font-size 12px
+  text-align right
+  margin 15px 10px
+
+
+footer
+  text-align center
+  font-size 11px
+  padding-bottom 12px
+  padding-top 300px
+
+  a
+    margin 0 20px
+    color cGrey
+
+#msg
+  background yellow
+
+
+
+
+// START => LOGIN, REGISTER
+article#start
+  margin 0 auto
+  width 240px
+  padding-bottom 20px
+  padding-top 100px
+
+
+  img
+    margin 10px 26px
+
+  form
+    margin-top 20px
+
+
+  input[ type='text' ], [ type='password' ], [ type='submit' ]
+    padding 5px
+    border-width 1px
+    font-size 13px
+    box-shadow #a6a8aa 1px 1px 0
+    display block
+
+  input[ type='text' ], [ type='password' ]
+    color cGrey
+    width 228px
+    height 30px
+
+  input[ type='text' ]
+    border-radius 4px 4px 0 0
+
+  input[ type='password' ]
+    border-radius 0 0 4px 4px
+
+  input[ type='submit' ]
+    height 40px
+    width 240px
+    border-radius 4px
+    margin 15px 0
+    font-weight 600
+    border-top 1px solid #96d1f8
+    background cSmartlistDark
+    linear-gradient top, cSmartlist, cSmartlistDark
+    color #fcfcfc
+
+  input[ type='submit' ]:hover
+    border-top-color #6ab1bf
+    background #6ab1bf
+    color #f5f5f5
+
+  input[ type='submit' ]:active
+    border-top-color #54929e
+    background #54929e
+
+
+  p.start
+    color cGrey
+    font-size 11px
+    width 100%
+    text-align center
+
+
+// TASKS
+#howto
+  // border 1px solid #9c9c9c
+  border 1px solid cDarkGrey
+  border-radius 4px
+  background cDarkGrey
+  linear-gradient top, cBackground, cDarkGrey
+  padding 7.5px 15px
+  color #383838
+  margin 0 20px
+  cursor pointer
+
+#howto:hover
+  border-color #d6eefc
+  // border-top-color #d6eefc
+  background #d6eefc
+  color #21464d
+
+#howto:active, #howto[ data-state='active' ]
+ // border-top-color #86c7d4
+ border-color #86c7d4
+ background #86c7d4
+ color white
+
+
+div#app
+  max-width 980px
+  margin 0 auto
+
+article#tasks
+  min-width 200px
+  max-width 600px
+  margin 0 auto
+
+
+  div#logo
+    margin 10px auto
+    width 188px
+    height 26px
+    background-image url('/img/smartlist.png' )
+
+
+  input
+    width 100%
+    box-sizing border-box
+    border 1px solid cBorder
+    border-radius 2px
+    padding 6px
+    margin 10px 0
+    font-size 24px
+    color #59595b
+
+  input:focus
+    border 1px solid cSmartlist
+
+
+.day
+  margin 5px 0
+
+  .label
+    font-size 20px
+    color #59595b
+    text-align center
+    padding-top 10px
+
+    #droppable
+      height 2px
+
+  .label.active
+    #droppable
+      background-color cSmartlist
+
+
+.day:first-of-type
+  .label
+    color cSmartlistDark
+    font-weight 500
+
+
+.ui-draggable-dragging
+  z-index 2
+  opacity 0.85
+
+
+.tasks
+  margin-bottom 10px
+  font-size 16px
+  color #272425
+  text-align left
+  font-weight normal
+
+
+  .task.active
+    .droppable
+      background-color cSmartlist
+
+
+  .task
+    .droppable
+      height 2px
+
+    .display
+      padding 5px 0
+      margin 3px 0
+      background-color #fff
+      height 18px
+      font-weight 400
+
+
+      label
+        display block
+        cursor pointer
+        width 100%
+        padding 0 28px
+        box-sizing border-box
+        ellipsis()
+
+      .destroy, .checkbox
+        display block
+        position absolute
+        cursor pointer
+        top 0
+
+        .img
+          padding 0
+          margin 0
+
+      .checkbox
+        left 0
+        padding 6px 6px
+        width 16px
+        height 16px
+
+        .img
+          width 16px
+          height 16px
+          background-image url('/img/checkbox.png')
+
+      .checkbox:active
+        .img
+          background-position 0 -16px
+
+      .destroy
+        right 0
+        padding 8px 8px
+        width 12px
+        height 12px
+
+        .img
+          width 12px
+          height 12px
+          background-image url('/img/destroy.png')
+
+
+      .destroy:active
+        .img
+          background-position 0 -12px
+
+
+    .edit
+      display none
+
+
+  .task[ data-view='editing' ]
+    margin-top -1px
+    padding 0
+
+    .edit
+      display block
+      width 100%
+
+    .display
+      display none
+
+
+
+
+
+
+
+.howto
+  position relative
+
+  .ht
+    position absolute
+    z-index 2
+
+
+#ht_hashtag
+  .ht
+    background-image url('/img/ht_hashtag.png')
+    height 92px
+    width 120px
+    top -15px
+    left -140px
+
+
+#ht_add
+  float right
+
+  .ht
+    background-image url('/img/ht_add.png')
+    height 73px
+    width 147px
+    top -45px
+    left -15px
+
+
+#ht_dragdrop
+  .ht
+    background-image url('/img/ht_dragdrop.png')
+    height 189px
+    width 97px
+    top 15px
+    left -85px
+
+
+#ht_edit
+  float right
+
+  .ht
+    background-image url('/img/ht_edit.png')
+    height 76px
+    width 254px
+    top -57px
+    left -95px
+
+
+#ht_destroy
+  float right
+
+  .ht
+    background-image url('/img/ht_destroy.png')
+    height 107px
+    width 126px
+    top 15px
+    left -8px
+
+
+#ht_checkbox
+  .ht
+    background-image url('/img/ht_checkbox.png')
+    height 43px
+    width 189px
+    left -185px
+    top -8px
+

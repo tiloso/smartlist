@@ -1,0 +1,22 @@
+extends layout
+
+block content
+
+  article#start
+
+    - if ( msg && msg.length )
+      div#msg
+        p= msg
+
+    img( src='/img/smartlist.png' )
+
+    form( action='/#{ title.toLowerCase() }', method='post' )
+      input( type='text', name='email', placeholder='Email' )
+      input( type='password', name='password', placeholder='Password' )
+      input( type='submit', value=title )
+
+
+    - var alter = ( title == 'Login' ) ? 'Register' : 'Login'
+    p.start or 
+      a( href='/#{ alter.toLowerCase() }') #{ alter }
+
